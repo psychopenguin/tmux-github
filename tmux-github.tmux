@@ -8,7 +8,7 @@ source $CURRENT_DIR/scripts/helpers.sh
 
 do_interpolation() {
     local option_value="$1"
-    local pr="#($CURRENT_DIR/scripts/pull-requests)"
+    local pr="#($CURRENT_DIR/scripts/pull-requests.sh)"
     local interpolated="${option_value/$interporlation_string/$pr}"
     echo $interpolated
 }
