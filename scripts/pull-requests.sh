@@ -4,7 +4,7 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source $CURRENT_DIR/helpers.sh
 
-icon="#[bg=colour76,fg=colour231]  #[default]"
+icon="#[fg=colour208] #[default]"
 assignee=$(hub api user|jq -r .login)
 issues=$(cat <<EOF | hub api graphql -F query=@- | jq -r .data.search.issueCount
 {search(first:50,
