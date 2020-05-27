@@ -9,7 +9,7 @@ assignee=$(hub api user|jq -r .login)
 issues=$(cat <<EOF | hub api graphql -F query=@- | jq -r .data.search.issueCount
 {search(first:50,
     type: ISSUE,
-    query:"is:pr is:open review-requested:$assignee archived:false"){
+    query:"is:pr is:open review-requested:$assignee archived:false draft:false"){
   issueCount
 }}
 EOF
